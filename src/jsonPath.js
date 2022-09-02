@@ -11,5 +11,9 @@ module.exports = function jsonPath(json, path) {
   const [result] = JSONPath({ json, path, wrap: true });
   debugLog('jsonPath resolved:', result);
 
+  if(result === undefined) {
+    return null;
+  }
+
   return result;
 };
